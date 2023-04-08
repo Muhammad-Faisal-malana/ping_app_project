@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants/constants.dart';
-import 'otp_screen.dart';
 
 class CreatePost extends StatelessWidget {
   const CreatePost({Key? key}) : super(key: key);
