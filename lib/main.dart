@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ping_project/screens/chat_screen.dart';
 import 'package:ping_project/screens/create_post.dart';
 import 'package:ping_project/screens/home_screen.dart';
 import 'package:ping_project/screens/login_via_phone_number.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:HomeScreen(),
+      home:ChatScreen(),
     );
   }
 }
