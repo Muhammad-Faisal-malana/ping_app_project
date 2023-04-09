@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../constants/constants.dart';
+import '../constants/app_colors.dart';
 
 class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool? showIcons;
@@ -27,7 +27,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
         preferredSize: const Size.fromHeight(155), // Set this height
         child: Container(
           decoration: BoxDecoration(
-            color: Constants.kWhiteColor,
+            color: AppColors.kWhiteColor,
             borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(16),
                 bottomRight: Radius.circular(16)),
@@ -65,7 +65,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
                         width: 117,
                         height: 34,
                         decoration: BoxDecoration(
-                            color: Constants.kOffWhiteColor,
+                            color: AppColors.kOffWhiteColor,
                             borderRadius: BorderRadius.circular(10)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -94,7 +94,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
                         width: 37,
                         height: 37,
                         decoration: BoxDecoration(
-                            color: Constants.kOffWhiteColor,
+                            color: AppColors.kOffWhiteColor,
                             borderRadius: BorderRadius.circular(30)),
                         child: Center(
                             child: SvgPicture.asset(
@@ -110,7 +110,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
                         width: 37,
                         height: 37,
                         decoration: BoxDecoration(
-                            color: Constants.kOffWhiteColor,
+                            color: AppColors.kOffWhiteColor,
                             borderRadius: BorderRadius.circular(30)),
                         child: Center(
                             child: SvgPicture.asset("assets/icons/camera.svg")),
@@ -122,7 +122,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
                     GestureDetector(
                       onTap: () {},
                       child: CircleAvatar(
-                        backgroundColor: Constants.kOffWhiteColor,
+                        backgroundColor: AppColors.kOffWhiteColor,
                         radius: 17,
                         child: Image.asset(
                           "assets/images/person_avatar.png",
@@ -171,7 +171,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
         margin: const EdgeInsets.symmetric(horizontal: 10),
         height: 34,
         decoration: BoxDecoration(
-            color: Constants.kOffWhiteColor,
+            color: AppColors.kOffWhiteColor,
             borderRadius: BorderRadius.circular(10)),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -181,7 +181,7 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
               SvgPicture.asset(image ?? ''),
               Text(
                 title ?? '',
-                style: TextStyle(color: Constants.kGreyColor),
+                style: TextStyle(color: AppColors.kGreyColor),
               ),
             ],
           ),
@@ -192,5 +192,5 @@ class CommonAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   @override
-  Size get preferredSize => Size.fromHeight(showIcons == true ? 160 : 65);
+  Size get preferredSize => Size.fromHeight(showIcons == true ? 160 : 117);
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ping_project/screens/sign_up_screen.dart';
+import 'package:ping_project/screens/auth/views/sign_up_view/sign_up_screen.dart';
 import 'package:ping_project/widgets/common_textField.dart';
 
-import '../constants/constants.dart';
-import '../widgets/common_button.dart';
-import 'forgot_password.dart';
+import '../../../../constants/app_colors.dart';
+import '../../../../widgets/common_button.dart';
+import '../forgot_password/forgot_password.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -71,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                         ),
                       ],
-                      color: Constants.kWhiteColor,
+                      color: AppColors.kWhiteColor,
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(50),
                           topRight: Radius.circular(50)),
@@ -86,7 +86,7 @@ class LoginScreen extends StatelessWidget {
                               "Let's Login.",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Constants.kBlueColor,
+                                color: AppColors.kBlueColor,
                                 fontSize: 35,
                                 fontFamily: "Poppins-SemiBold",
                               ),
@@ -98,7 +98,7 @@ class LoginScreen extends StatelessWidget {
                               "Do you have an account? Login",
                               style: TextStyle(
                                 //fontWeight: FontWeight.bold,
-                                color: Constants.kGreyColor,
+                                color: AppColors.kGreyColor,
                                 fontSize: 12,
                                 fontFamily: "Poppins-SemiBold",
                               ),
@@ -145,7 +145,7 @@ class LoginScreen extends StatelessWidget {
                                 child: SizedBox(
                                   height: height * 0.07,
                                   width: width * 0.8,
-                                  child: CommonButton(color: Constants.kBlueColor,onPress: (){},txt: "Log In"),
+                                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){},txt: "Log In"),
                                 ),
                               ),
                             ),
@@ -164,7 +164,7 @@ class LoginScreen extends StatelessWidget {
                                   child: Text(
                                     "ForgotPassword.   ",
                                     style: TextStyle(
-                                      color: Constants.kGreyColor,
+                                      color: AppColors.kGreyColor,
                                       fontSize: 12,
                                       fontFamily: "Poppins-SemiBold",
                                     ),
@@ -179,7 +179,7 @@ class LoginScreen extends StatelessWidget {
                                   child: Text(
                                     "Create new account",
                                     style: TextStyle(
-                                        color: Constants.kBlueColor,
+                                        color: AppColors.kBlueColor,
                                         fontSize: 12,
                                         fontFamily: "Poppins-SemiBold"),
                                   ),

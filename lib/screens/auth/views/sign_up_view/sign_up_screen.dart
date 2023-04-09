@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ping_project/screens/login%20_screen.dart';
+import 'package:ping_project/screens/auth/views/login_view/login%20_screen.dart';
 import 'package:ping_project/widgets/common_textField.dart';
 
-import '../constants/constants.dart';
-import '../widgets/common_button.dart';
+import '../../../../constants/app_colors.dart';
+import '../../../../widgets/common_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -70,7 +70,7 @@ class SignUpScreen extends StatelessWidget {
                           ),
                         ),
                       ],
-                      color: Constants.kWhiteColor,
+                      color: AppColors.kWhiteColor,
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(50),
                           topRight: Radius.circular(50)),
@@ -81,19 +81,19 @@ class SignUpScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 7,
                             ),
                             Text(
                               "Sign up",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Constants.kBlueColor,
+                                color: AppColors.kBlueColor,
                                 fontSize: 35,
                                 // fontFamily: "Poppins-SemiBold",
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
@@ -101,7 +101,7 @@ class SignUpScreen extends StatelessWidget {
                               style: TextStyle(
                                 height: 1.5,
                                 //fontWeight: FontWeight.bold,
-                                color: Constants.kGreyColor,
+                                color: AppColors.kGreyColor,
                                 fontSize: 12,
                                 fontFamily: "Poppins-SemiBold",
                               ),
@@ -155,13 +155,12 @@ class SignUpScreen extends StatelessWidget {
                               ),
                             ),
                             CommonTextField(
-
                               fillColor: const Color(0xffF5F8FA),
                               hint: "Name",
                               prefixIcon: Padding(
                                 padding: const EdgeInsets.all(5.0),
                                 child: Container(
-                                    padding:const EdgeInsets.symmetric(
+                                    padding: const EdgeInsets.symmetric(
                                         vertical: 17, horizontal: 13),
                                     child: const SizedBox()),
                               ),
@@ -173,7 +172,7 @@ class SignUpScreen extends StatelessWidget {
                               hint: "Username",
 
                               prefixIcon: Padding(
-                                padding:const EdgeInsets.all(5.0),
+                                padding: const EdgeInsets.all(5.0),
                                 child: Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 17, horizontal: 13),
@@ -188,13 +187,13 @@ class SignUpScreen extends StatelessWidget {
 
                               prefixIcon: Padding(
                                 padding: const EdgeInsets.all(5.0),
-                                child:  Container(
+                                child: Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 17, horizontal: 13),
                                     child: const SizedBox()),
                               ),
                             ),
-                           const SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Row(
@@ -207,7 +206,7 @@ class SignUpScreen extends StatelessWidget {
                                 Text(
                                   "I Accept ",
                                   style: TextStyle(
-                                    color: Constants.kBlackColor,
+                                    color: AppColors.kBlackColor,
                                     fontSize: 12,
                                     fontFamily: "Poppins-SemiBold",
                                   ),
@@ -215,7 +214,7 @@ class SignUpScreen extends StatelessWidget {
                                 Text(
                                   "to privacy & Terms & Conditions",
                                   style: TextStyle(
-                                      color: Constants.kBlueColor,
+                                      color: AppColors.kBlueColor,
                                       fontSize: 12,
                                       fontFamily: "Poppins-SemiBold"),
                                 ),
@@ -227,7 +226,10 @@ class SignUpScreen extends StatelessWidget {
                                 child: SizedBox(
                                   height: height * 0.07,
                                   width: width * 0.8,
-                                  child: CommonButton(txt: "Sign up", onPress: (){},color: Constants.kBlueColor),
+                                  child: CommonButton(
+                                      txt: "Sign up",
+                                      onPress: () {},
+                                      color: AppColors.kBlueColor),
                                 ),
                               ),
                             ),
@@ -240,7 +242,7 @@ class SignUpScreen extends StatelessWidget {
                                 Text(
                                   "Already have an account ?",
                                   style: TextStyle(
-                                    color: Constants.kBlueColor,
+                                    color: AppColors.kBlueColor,
                                     fontSize: 12,
                                     fontFamily: "Poppins-SemiBold",
                                   ),
@@ -249,12 +251,13 @@ class SignUpScreen extends StatelessWidget {
                                   onTap: () => Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const LoginScreen(),
+                                        builder: (context) =>
+                                            const LoginScreen(),
                                       )),
                                   child: Text(
                                     "Login",
                                     style: TextStyle(
-                                        color: Constants.kBlueColor,
+                                        color: AppColors.kBlueColor,
                                         fontSize: 12,
                                         fontFamily: "Poppins-SemiBold"),
                                   ),
@@ -275,11 +278,3 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
-//Checkbox(
-//   value: this.showvalue,
-//   onChanged: (bool value) {
-//     setState(() {
-//       this.showvalue = value;
-//     });
-//   },
-// ),

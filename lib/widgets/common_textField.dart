@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ping_project/constants/constants.dart';
+import '../constants/app_colors.dart';
 
 class CommonTextField extends StatelessWidget {
   final String? hint;
@@ -12,9 +12,9 @@ class CommonTextField extends StatelessWidget {
   final String? errorText;
   final String? validate;
   final FocusNode? focusNode;
-  final List<TextInputFormatter>? inputformater;
+  final List<TextInputFormatter>? inputFormatter;
   final String? text;
-  final bool obsecureText;
+  final bool obSecureText;
   final Color? focusBorderColor;
   final double? focusWidth;
   final Color? borderColor;
@@ -33,7 +33,7 @@ class CommonTextField extends StatelessWidget {
     Key? key,
     this.hint,
     this.text,
-    this.inputformater,
+    this.inputFormatter,
     this.prefixIcon,
     this.controller,
     this.suffix,
@@ -44,7 +44,7 @@ class CommonTextField extends StatelessWidget {
     this.focusBorderColor,
     this.width,
     this.borderColor,
-    this.obsecureText = false,
+    this.obSecureText = false,
     this.onTap,
     this.focusNode,
     this.validator,
@@ -73,20 +73,20 @@ class CommonTextField extends StatelessWidget {
           onTap: onTap,
           autofocus: autofocus ?? false,
           keyboardType: keyboardType,
-          inputFormatters: inputformater,
+          inputFormatters: inputFormatter,
           onChanged: onChanged,
           onFieldSubmitted: onSubmit,
           readOnly: readOnly ?? false,
           focusNode: focusNode,
-          // autovalidateMode: AutovalidateMode.onUserInteraction,
+
 
           textInputAction: TextInputAction.go,
           maxLines: maxLine,
-          obscureText: obsecureText,
+          obscureText: obSecureText,
           // style: GoogleFonts.montserrat(
           //   fontSize: 15.0,
           // ),
-          cursorColor: Constants.kBlueColor,
+          cursorColor: AppColors.kBlueColor,
           textCapitalization: TextCapitalization.words,
           textAlignVertical: TextAlignVertical.center,
           controller: controller,
@@ -107,7 +107,7 @@ class CommonTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
               borderSide: BorderSide(
                 width: 1,
-                color: Constants.kBlueColor,
+                color: AppColors.kBlueColor,
               ),
             ),
             contentPadding:

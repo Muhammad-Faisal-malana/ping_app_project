@@ -6,6 +6,7 @@ class AppColors {
   static Color kBlackColor =  const Color(0xff000000);
   static Color kGreyColor =  const Color(0xff666666);
   static Color kOffWhiteColor =  const Color(0xffF8F9FA);
+  static Color kCardSubtitleColor =  const Color(0xff586285);
 
 
 }

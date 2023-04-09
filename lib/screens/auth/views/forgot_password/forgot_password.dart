@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ping_project/widgets/common_textField.dart';
 
-import '../constants/constants.dart';
-import '../widgets/common_button.dart';
+import '../../../../constants/app_colors.dart';
+import '../../../../widgets/common_button.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
@@ -66,7 +66,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                           ),
                         ),
                       ],
-                      color: Constants.kWhiteColor,
+                      color: AppColors.kWhiteColor,
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(50),
                           topRight: Radius.circular(50)),
@@ -82,7 +82,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                               "Forgot Password",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Constants.kBlueColor,
+                                color: AppColors.kBlueColor,
                                 fontSize: 35,
                                 fontFamily: "Poppins-SemiBold",
                               ),
@@ -95,7 +95,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                               style: TextStyle(
                                 height: 1.5,
                                 //fontWeight: FontWeight.bold,
-                                color: Constants.kGreyColor,
+                                color: AppColors.kGreyColor,
                                 fontSize: 12,
                                 fontFamily: "Poppins-SemiBold",
                               ),
@@ -123,7 +123,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 child: SizedBox(
                                   height: height * 0.07,
                                   width: width * 0.8,
-                                  child: CommonButton(color: Constants.kBlueColor,onPress: (){},txt: "Send Link"),
+                                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){},txt: "Send Link"),
                                 ),
                               ),
                             ),
