@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../constants/constants.dart';
-
+import '../../constants/app_colors.dart';
 class CreatePost extends StatelessWidget {
   const CreatePost({Key? key}) : super(key: key);
 
@@ -37,7 +35,7 @@ class CreatePost extends StatelessWidget {
           child: Text(
             "Create Post",
             style: TextStyle(
-              color: Constants.kBlueColor,
+              color: AppColors.kBlueColor,
               fontSize: 20,
               fontWeight: FontWeight.bold,
               // fontFamily: "PoppinsBold"
@@ -54,7 +52,7 @@ class CreatePost extends StatelessWidget {
               title: Text(
                 "The Audit",
                 style: TextStyle(
-                  color: Constants.kBlueColor,
+                  color: AppColors.kBlueColor,
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   // fontFamily: "PoppinsBold"
@@ -74,7 +72,7 @@ class CreatePost extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               child: Text(
                 "What's On Your Mind? @Mention#Hashtags",
-                style: TextStyle(color: Constants.kGreyColor),
+                style: TextStyle(color: AppColors.kGreyColor),
               ),
             ),
             Expanded(child: Container(),),
@@ -102,9 +100,16 @@ class CreatePost extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30))),
-                      backgroundColor: Constants.kBlueColor,
+                      backgroundColor: AppColors.kBlueColor,
                     ),
                     onPressed: () {
+
+
+                        showDialog(
+                            context: context,
+                            builder: (_) => RadioDialog(),
+                        );
+
 
                 }, child: const Text("Post"))
               ],),
@@ -136,13 +141,96 @@ class CreatePost extends StatelessWidget {
                const Text("Add To Your Post"),
               const SizedBox(),
               InkWell(
-                  onTap: () {
 
-                  },
                   child: SvgPicture.asset("assets/icons/plus-square.svg")),
             ],),
         ),
       ),
+    );
+  }
+
+}
+
+
+class RadioDialog extends StatefulWidget {
+  @override
+  _RadioDialogState createState() => _RadioDialogState();
+}
+
+class _RadioDialogState extends State<RadioDialog> {
+  late String _selectedOption;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedOption = 'Option 1';
+  }
+
+  void _handleRadioValueChange(String value) {
+    setState(() {
+      _selectedOption = value;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title:  Text('Select Your Privacy',style: TextStyle(color: AppColors.kBlueColor,fontSize: 20),),
+      contentPadding:const EdgeInsets.symmetric(vertical: 2.0),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          RadioListTile(
+            title:  Text('Everyone',style: TextStyle(color: AppColors.kBlueColor,fontSize: 20),),
+            value: 'Option 1',
+            groupValue: _selectedOption,
+            onChanged: (value) {
+
+            },
+          ),
+          RadioListTile(
+            title:  Text('Followers',style: TextStyle(color: AppColors.kBlueColor,fontSize: 20),),
+            value: 'Option 2',
+            groupValue: _selectedOption,
+            onChanged: (value) {
+
+            },
+          ),
+          RadioListTile(
+            title:  Text('No One',style: TextStyle(color: AppColors.kBlueColor,fontSize: 20),),
+            value: 'Option 3',
+            groupValue: _selectedOption,
+            onChanged: (value) {
+
+            },
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Cancel',style: TextStyle(
+
+            color: AppColors.kBlueColor,
+
+          fontSize: 15,fontWeight: FontWeight.bold),),
+        ),
+        TextButton(
+          onPressed: () {
+
+            Navigator.pop(context);
+          },
+          child: Text('OK',style: TextStyle(
+
+    color: AppColors.kBlueColor,
+
+    fontSize: 15,fontWeight: FontWeight.bold),),
+        ),
+      ],
     );
   }
 }

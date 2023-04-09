@@ -161,26 +161,26 @@ class MainBodyCard extends StatelessWidget {
   }
 }
 
-class RPSCustomPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint0 = Paint()
-      ..color = const Color.fromARGB(255, 33, 150, 243)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3;
-
-    Path path0 = Path();
-    path0.moveTo(size.width * 0.0020500, size.height * 0.9957500);
-    path0.quadraticBezierTo(size.width * 0.5011000, size.height * 0.8793000,
-        size.width * 0.5057500, size.height * 0.4888500);
-    path0.quadraticBezierTo(size.width * 0.4993000, size.height * 0.1079000, 0,
-        size.height * 0.0050000);
-
-    canvas.drawPath(path0, paint0);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}
+// class RPSCustomPainter extends CustomPainter {
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     Paint paint0 = Paint()
+//       ..color = const Color.fromARGB(255, 33, 150, 243)
+//       ..style = PaintingStyle.stroke
+//       ..strokeWidth = 3;
+//
+//     Path path0 = Path();
+//     path0.moveTo(size.width * 0.0020500, size.height * 0.9957500);
+//     path0.quadraticBezierTo(size.width * 0.5011000, size.height * 0.8793000,
+//         size.width * 0.5057500, size.height * 0.4888500);
+//     path0.quadraticBezierTo(size.width * 0.4993000, size.height * 0.1079000, 0,
+//         size.height * 0.0050000);
+//
+//     canvas.drawPath(path0, paint0);
+//   }
+//
+//   @override
+//   bool shouldRepaint(covariant CustomPainter oldDelegate) {
+//     return true;
+//   }
+// }

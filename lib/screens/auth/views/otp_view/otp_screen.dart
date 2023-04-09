@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:ping_project/widgets/common_button.dart';
 
-import '../constants/constants.dart';
+import '../../../../constants/app_colors.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -14,8 +14,6 @@ class OtpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController _pinCodeController = TextEditingController();
 
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark.copyWith(
         statusBarColor: Colors.transparent,
@@ -66,7 +64,7 @@ class OtpScreen extends StatelessWidget {
                       Text(
                         "48 Seconds",
                         style: TextStyle(
-                            color: Constants.kBlueColor,
+                            color: AppColors.kBlueColor,
                             fontSize: 18,
                             fontFamily: "PoppinsBold"),
                       ),
@@ -76,7 +74,7 @@ class OtpScreen extends StatelessWidget {
                       Text(
                         "Please enter the OTP sent\non your mobile phone \nnumber",
                         style: TextStyle(
-                            color: Constants.kGreyColor,
+                            color: AppColors.kGreyColor,
                             fontSize: 16,
                             fontFamily: "PoppinsLight"),
                       ),
@@ -92,7 +90,6 @@ class OtpScreen extends StatelessWidget {
                           length: 4,
                           animationType: AnimationType.fade,
                           onChanged: (value) {
-                            // _pinCodeController.text = value;
                           },
                           pinTheme: PinTheme(
                             shape: PinCodeFieldShape.circle,
@@ -120,11 +117,11 @@ class OtpScreen extends StatelessWidget {
                           Text(
                             "Resend",
                             style: TextStyle(
-                                color: Constants.kBlackColor,
+                                color: AppColors.kBlackColor,
                                 fontSize: 12,
                                 fontFamily: "PoppinsBold"),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           SvgPicture.asset(
@@ -144,7 +141,7 @@ class OtpScreen extends StatelessWidget {
                               builder: (_) => getSuccessAlert(context)
                             );
                           },
-                          color: Constants.kBlueColor),
+                          color: AppColors.kBlueColor),
                     ],
                   ),
                 ),
@@ -168,7 +165,7 @@ class OtpScreen extends StatelessWidget {
 
         children: [
           Container(
-            margin: EdgeInsets.only(top: 35),
+            margin: const EdgeInsets.only(top: 35),
             height: 271,
             width: 338,
             decoration: BoxDecoration(
@@ -180,7 +177,7 @@ class OtpScreen extends StatelessWidget {
             mainAxisAlignment:
             MainAxisAlignment.spaceAround,
             children: [
-              SizedBox.shrink(),
+             const SizedBox.shrink(),
               SvgPicture.asset(
                 'assets/images/verified_alert_image.svg',
                 height: 168,
@@ -194,9 +191,9 @@ class OtpScreen extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   child: Container(height: 25,width: 25,decoration: BoxDecoration(
-                      color: Constants.kBlueColor,
+                      color: AppColors.kBlueColor,
                       borderRadius: BorderRadius.circular(20)),
-                    child: Icon(Icons.close,color: Colors.white,),
+                    child:const Icon(Icons.close,color: Colors.white,),
                   ),
                 ),
               ),
@@ -207,7 +204,7 @@ class OtpScreen extends StatelessWidget {
             child: Text(
               "Verified",
               style: TextStyle(
-                  color: Constants.kBlueColor,
+                  color: AppColors.kBlueColor,
                   fontSize: 18,
                   fontFamily: "PoppinsBold"),
             ),
@@ -220,7 +217,7 @@ class OtpScreen extends StatelessWidget {
               "Phone Number Successfully Registered.",
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: Constants.kGreyColor,
+                  color: AppColors.kGreyColor,
                   fontSize: 16,
                   fontFamily: "PoppinsLight"),
             ),
@@ -244,9 +241,9 @@ class OtpScreen extends StatelessWidget {
               Positioned(
               left:205,
               child: Container(height: 25,width: 25,decoration: BoxDecoration(
-                  color: Constants.kBlueColor,
+                  color: AppColors.kBlueColor,
                   borderRadius: BorderRadius.circular(20)),
-                child: Icon(Icons.close,color: Colors.white,),
+                child: const Icon(Icons.close,color: Colors.white,),
               ),
             ),
             Column(
@@ -264,7 +261,7 @@ class OtpScreen extends StatelessWidget {
                 Text(
                   "Failed",
                   style: TextStyle(
-                    color: Constants.kBlueColor,
+                    color: AppColors.kBlueColor,
                     fontSize: 34,
                     fontWeight: FontWeight.bold,
                     // fontFamily: "PoppinsBold"
@@ -274,12 +271,12 @@ class OtpScreen extends StatelessWidget {
                   child: Text(
                     "Failed to registered\n please try again..",
                     style: TextStyle(
-                        color: Constants.kGreyColor,
+                        color: AppColors.kGreyColor,
                         fontSize: 16,
                         fontFamily: "PoppinsLight"),
                   ),
                 ),
-                SizedBox(height: 10,),
+               const SizedBox(height: 10,),
               ],
             ),
           ],

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ping_project/constants/constants.dart';
-import 'package:ping_project/screens/sign_up_screen.dart';
+import 'package:ping_project/constants/app_colors.dart';
+import 'package:ping_project/screens/auth/views/sign_up_view/sign_up_screen.dart';
 
-import '../widgets/common_button.dart';
+import '../../../../widgets/common_button.dart';
 
 
 class InitialLoginScreen extends StatelessWidget {
@@ -52,20 +52,20 @@ class InitialLoginScreen extends StatelessWidget {
                 child: Text(
                   "Find Friends",
                   style: TextStyle(
-                    color: Constants.kBlackColor,
+                    color: AppColors.kBlackColor,
                     fontSize: 20,
                     fontFamily: "Poppins-SemiBold",
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 2),
+                padding:const EdgeInsets.only(top: 2),
                 child: SizedBox(
                   width: 220,
                   child: Text(
                     "Let's find your best friend and enjoy your good life from now!",
                     style: TextStyle(
-                        color: Constants.kGreyColor,
+                        color: AppColors.kGreyColor,
                         fontSize: 15,
                         fontFamily: "Poppins-SemiBold",
                         height: 1.5),
@@ -77,7 +77,7 @@ class InitialLoginScreen extends StatelessWidget {
                 child: SizedBox(
                   height: height * 0.07,
                   width: width * 0.8,
-                  child: CommonButton(color: Constants.kBlueColor,onPress: (){},txt: "Log In"),
+                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){},txt: "Log In"),
 
                 ),
               ),
@@ -91,7 +91,7 @@ class InitialLoginScreen extends StatelessWidget {
                 Text(
                   "Do you have an account? ",
                   style: TextStyle(
-                      color: Constants.kGreyColor,
+                      color: AppColors.kGreyColor,
                       fontSize: 15,
                       fontFamily: "Poppins-SemiBold",
                       ),
@@ -99,14 +99,13 @@ class InitialLoginScreen extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return SignUpScreen();
+                      return const SignUpScreen();
                     },));
                   },
-                  child: Text(
+                  child: const Text(
                     "Sign UP",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Constants.kBlackColor,
                       fontSize: 15,
                       fontFamily: "Poppins-SemiBold"
                     ),
