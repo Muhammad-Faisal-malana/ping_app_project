@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ping_project/screens/login%20_screen.dart';
-import '../constants/constants.dart';
-import '../widgets/common_button.dart';
+import 'package:ping_project/screens/auth/views/login_view/login%20_screen.dart';
+import '../../../../constants/app_colors.dart';
+import '../../../../widgets/common_button.dart';
 
 
 class LoginViaPhoneNumber extends StatelessWidget {
@@ -72,7 +72,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                           ),
                         ),
                       ],
-                      color: Constants.kWhiteColor,
+                      color: AppColors.kWhiteColor,
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(50),
                           topRight: Radius.circular(50)),
@@ -87,7 +87,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                               "Let's Login.",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Constants.kBlueColor,
+                                color: AppColors.kBlueColor,
                                 fontSize: 35,
                                 // fontFamily: "PoppinsBold",
                               ),
@@ -101,7 +101,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                                   "Do you have an account? ",
                                   style: TextStyle(
                                     //fontWeight: FontWeight.bold,
-                                    color: Constants.kGreyColor,
+                                    color: AppColors.kGreyColor,
                                     fontSize: 12,
                                   ),
                                 ),
@@ -116,7 +116,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                                     "Login",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Constants.kBlackColor,
+                                      color: AppColors.kBlackColor,
 
                                       fontSize: 13,
                                     ),
@@ -131,7 +131,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                               "Please enter the mobile \nphone number",
                               style: TextStyle(
                                   fontWeight: FontWeight.w100,
-                                  color: Constants.kGreyColor,
+                                  color: AppColors.kGreyColor,
                                   fontSize: 27,
                                   fontFamily: "PoppinsLight"
                               ),
@@ -143,7 +143,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                               "Phone Number",
                               style: TextStyle(
                                 fontWeight: FontWeight.w100,
-                                color: Constants.kBlackColor,
+                                color: AppColors.kBlackColor,
                                 fontSize: 16,
 
                               ),
@@ -155,7 +155,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                             TextFormField(
 
                               cursorHeight: 35,
-                              cursorColor: Constants.kBlackColor,
+                              cursorColor: AppColors.kBlackColor,
                               style: const TextStyle(fontSize: 36,fontWeight: FontWeight.bold),
                               decoration: InputDecoration(
                                 border: InputBorder.none,
@@ -181,7 +181,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                                  //  fontFamily: "PoppinsBold",
                                 ),
 
-                                fillColor: Constants.kBlackColor,
+                                fillColor: AppColors.kBlackColor,
 
 
                               ),
@@ -194,7 +194,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                                 child: SizedBox(
                                   height: height * 0.07,
                                   width: width * 0.8,
-                                  child: CommonButton(color: Constants.kBlueColor,onPress: (){},txt: "Continue"),
+                                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){},txt: "Continue"),
                                 ),
                               ),
                             ),
@@ -215,7 +215,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                                   child: Text(
                                     "Continue With email instead",
                                     style: TextStyle(
-                                        color: Constants.kBlueColor,
+                                        color: AppColors.kBlueColor,
                                         fontSize: 12,
                                         fontFamily: "Poppins-SemiBold"),
                                   ),

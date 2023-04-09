@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ping_project/screens/chat_screen/chat_screen.dart';
 
 import '../create_menu/create_menu.dart';
 import '../videos/video.dart';
@@ -18,7 +19,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     HomeScreen(),
     VideoScreen(),
     CreateMenuScreen(),
-    Text('chat', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    ChatScreen(),
     Text('cart', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
   ];
 
