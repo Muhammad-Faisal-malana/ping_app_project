@@ -4,10 +4,11 @@ import 'package:ping_project/screens/home/components/main_body_card.dart';
 
 import '../../constants/constants.dart';
 import '../../widgets/common_app_bar.dart';
+import 'bottom_nav_bar.dart';
 import 'components/top_header_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const  HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +61,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
+       // bottomNavigationBar: const MyNavigationBar(),
       ),
     );
   }

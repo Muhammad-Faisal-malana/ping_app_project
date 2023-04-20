@@ -1,6 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15">
-  <g id="Group_727" data-name="Group 727" transform="translate(0.282 -0.117)">
-    <ellipse id="Ellipse_88" data-name="Ellipse 88" cx="8" cy="7.5" rx="8" ry="7.5" transform="translate(-0.282 0.117)" fill="#3776a5"/>
-    <path id="loop" d="M6.74,12.427a3.468,3.468,0,0,0,6.23-.649h1.208a4.624,4.624,0,0,1-8.272,1.484L4.5,14.666V11.2H7.967Zm5.922-3.611a3.469,3.469,0,0,0-6.232.65H5.222A4.626,4.626,0,0,1,13.5,7.981l1.4-1.4v3.467H11.434l1.228-1.228Z" transform="translate(-1.803 -2.742)" fill="#fff" fill-rule="evenodd"/>
-  </g>
+    <g id="Group_727" data-name="Group 727" transform="translate(0.282 -0.117)">
+        <ellipse id="Ellipse_88" data-name="Ellipse 88" cx="8" cy="7.5" rx="8" ry="7.5"
+            transform="translate(-0.282 0.117)" fill="#3776a5" />
+        <path id="loop"
+            d="M6.74,12.427a3.468,3.468,0,0,0,6.23-.649h1.208a4.624,4.624,0,0,1-8.272,1.484L4.5,14.666V11.2H7.967Zm5.922-3.611a3.469,3.469,0,0,0-6.232.65H5.222A4.626,4.626,0,0,1,13.5,7.981l1.4-1.4v3.467H11.434l1.228-1.228Z"
+            transform="translate(-1.803 -2.742)" fill="#fff" fill-rule="evenodd" />
+    </g>
 </svg>
