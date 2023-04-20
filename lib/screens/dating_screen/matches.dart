@@ -4,8 +4,8 @@ import 'package:ping_project/constants/app_colors.dart';
 
 import 'components/matches_top-card.dart';
 
-class MatchesOne extends StatelessWidget {
-  const MatchesOne({Key? key}) : super(key: key);
+class Matches extends StatelessWidget {
+  const Matches({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,22 +60,30 @@ class MatchesOne extends StatelessWidget {
                 child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30))),
+                margin: const EdgeInsets.all(10),
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(30))),
                 elevation: 10,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Text(
-                      textAlign: TextAlign.center,
-                      "keep looking\nThere is someone\nfor everyone",
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
+
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        child: Image.asset(
+                          "assets/images/bgImg.png",
+
+                        ),
+
+
                       ),
                     ),
-                    Image.asset(
-                      "assets/icons/search_big.png",
-                    ),
+
+                    Row(children: [
+                      SvgPicture.asset(""),
+                    ],)
                   ],
                 ),
               ),
