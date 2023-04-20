@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -140,9 +139,8 @@ class _VideoAppState extends State<VideoApp> {
                                       aspectRatio: 3 / 2,
                                       child: VideoPlayer(controller),
                                     )
-                                  : const Expanded(
-                                      child: Center(
-                                          child: CircularProgressIndicator())),
+                                  : const Center(
+                                      child: CircularProgressIndicator()),
                             ),
                           ),
                         ),

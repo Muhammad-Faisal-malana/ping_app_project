@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ping_project/screens/auth/views/sign_up_view/sign_up_screen.dart';
 import 'package:ping_project/widgets/common_textField.dart';
 
 import '../../../../constants/app_colors.dart';
@@ -28,7 +29,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/images/background_22.png"),
+                image: AssetImage("assets/images/background_img.png"),
               ),
             ),
           ),
@@ -123,7 +124,14 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 child: SizedBox(
                                   height: height * 0.07,
                                   width: width * 0.8,
-                                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){},txt: "Send Link"),
+                                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){
+                                    Navigator.push(context, MaterialPageRoute(
+                                      builder: (context) {
+                                        return const SignUpScreen();
+                                      },
+                                    ));
+
+                                  },txt: "Send Link"),
                                 ),
                               ),
                             ),

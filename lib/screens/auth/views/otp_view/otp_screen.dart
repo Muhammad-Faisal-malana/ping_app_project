@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter_svg/svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:ping_project/constants/app_colors.dart';
 import 'package:ping_project/widgets/common_button.dart';
 
-import '../../../../constants/app_colors.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -13,7 +13,6 @@ class OtpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController _pinCodeController = TextEditingController();
-
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark.copyWith(
         statusBarColor: Colors.transparent,
@@ -21,138 +20,142 @@ class OtpScreen extends StatelessWidget {
         systemNavigationBarColor: Colors.white,
         // // systemNavigationBarIconBrightness: Brightness.dark,
       ),
-      child: Scaffold(
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage("assets/images/background_22.png"),
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 38, right: 38),
-            child: Stack(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, top: 65),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Icon(
-                      Icons.arrow_back_ios_new_rounded,
+      child: Stack(
+        children: [
+
+          Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/images/background_img.png"),
+                ),
+              ),
+              child: Scaffold(
+                backgroundColor: Colors.transparent,
+                body: Padding(
+                  padding: const EdgeInsets.only(left: 38, right: 38),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 100,
+                        ),
+                        Center(
+                          child: SvgPicture.asset(
+                            'assets/images/otp_image.svg',
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 32,
+                        ),
+                        Text(
+                          "48 Seconds",
+                          style: TextStyle(
+                              color: AppColors.kBlueColor,
+                              fontSize: 18,
+                              fontFamily: "PoppinsBold"),
+                        ),
+                        const SizedBox(
+                          height: 17,
+                        ),
+                        Text(
+                          "Please enter the OTP sent\non your mobile phone \nnumber",
+                          style: TextStyle(
+                              color: AppColors.kGreyColor,
+                              fontSize: 16,
+                              fontFamily: "PoppinsLight"),
+                        ),
+                        const SizedBox(
+                          height: 27,
+                        ),
+                        Center(
+                          child: PinCodeTextField(
+                            textStyle: const TextStyle(
+                                fontSize: 37, fontWeight: FontWeight.bold),
+                            controller: _pinCodeController,
+                            appContext: context,
+                            length: 4,
+                            animationType: AnimationType.fade,
+                            onChanged: (value) {
+                              // _pinCodeController.text = value;
+                            },
+                            pinTheme: PinTheme(
+                              shape: PinCodeFieldShape.circle,
+                              borderRadius: BorderRadius.circular(7),
+                              fieldHeight: 70,
+                              fieldWidth: 70,
+                              activeFillColor: Colors.white,
+                              inactiveFillColor: Colors.white,
+                              selectedFillColor: Colors.white,
+                              activeColor: Colors.white,
+                              inactiveColor: Colors.white,
+                              selectedColor: Colors.white,
+                            ),
+                            cursorColor: Colors.black,
+                            cursorHeight: 30,
+                            animationDuration: const Duration(milliseconds: 250),
+                            enableActiveFill: true,
+                            keyboardType: TextInputType.number,
+                          ),
+                        ),
+                        const SizedBox(height: 15),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              "Resend",
+                              style: TextStyle(
+                                  color: AppColors.kBlackColor,
+                                  fontSize: 12,
+                                  fontFamily: "PoppinsBold"),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            SvgPicture.asset(
+                              "assets/icons/resend_icon.svg",
+                              fit: BoxFit.fill,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 27,
+                        ),
+                        CommonButton(
+                            txt: "Verify",
+                            onPress: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (_) => getSuccessAlert(context)
+                              );
+                            },
+                            color: AppColors.kBlueColor),
+                      ],
                     ),
                   ),
                 ),
-                SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 140,
-                      ),
-                      Center(
-                        child: SvgPicture.asset(
-                          'assets/images/otp_image.svg',
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 32,
-                      ),
-                      Text(
-                        "48 Seconds",
-                        style: TextStyle(
-                            color: AppColors.kBlueColor,
-                            fontSize: 18,
-                            fontFamily: "PoppinsBold"),
-                      ),
-                      const SizedBox(
-                        height: 17,
-                      ),
-                      Text(
-                        "Please enter the OTP sent\non your mobile phone \nnumber",
-                        style: TextStyle(
-                            color: AppColors.kGreyColor,
-                            fontSize: 16,
-                            fontFamily: "PoppinsLight"),
-                      ),
-                      const SizedBox(
-                        height: 27,
-                      ),
-                      Center(
-                        child: PinCodeTextField(
-                          textStyle: const TextStyle(
-                              fontSize: 37, fontWeight: FontWeight.bold),
-                          controller: _pinCodeController,
-                          appContext: context,
-                          length: 4,
-                          animationType: AnimationType.fade,
-                          onChanged: (value) {
-                          },
-                          pinTheme: PinTheme(
-                            shape: PinCodeFieldShape.circle,
-                            borderRadius: BorderRadius.circular(7),
-                            fieldHeight: 70,
-                            fieldWidth: 70,
-                            activeFillColor: Colors.white,
-                            inactiveFillColor: Colors.white,
-                            selectedFillColor: Colors.white,
-                            activeColor: Colors.white,
-                            inactiveColor: Colors.white,
-                            selectedColor: Colors.white,
-                          ),
-                          cursorColor: Colors.black,
-                          cursorHeight: 30,
-                          animationDuration: const Duration(milliseconds: 250),
-                          enableActiveFill: true,
-                          keyboardType: TextInputType.number,
-                        ),
-                      ),
-                      const SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            "Resend",
-                            style: TextStyle(
-                                color: AppColors.kBlackColor,
-                                fontSize: 12,
-                                fontFamily: "PoppinsBold"),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          SvgPicture.asset(
-                            "assets/icons/resend_icon.svg",
-                            fit: BoxFit.fill,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 27,
-                      ),
-                      CommonButton(
-                          txt: "Verify",
-                          onPress: () {
-                            showDialog(
-                              context: context,
-                              builder: (_) => getSuccessAlert(context)
-                            );
-                          },
-                          color: AppColors.kBlueColor),
-                    ],
-                  ),
+              ),
+
+            ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30, top: 65),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: const Icon(
+                  Icons.arrow_back_ios_new_rounded,
                 ),
-              ],
+              ),
             ),
           ),
-          // Scaffold(
-          //   backgroundColor: Colors.transparent,
-          //   body: ,
-          // ),
-        ),
+       
+        ],
       ),
     );
   }
@@ -165,7 +168,7 @@ class OtpScreen extends StatelessWidget {
 
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 35),
+            margin: EdgeInsets.only(top: 35),
             height: 271,
             width: 338,
             decoration: BoxDecoration(
@@ -177,15 +180,15 @@ class OtpScreen extends StatelessWidget {
             mainAxisAlignment:
             MainAxisAlignment.spaceAround,
             children: [
-             const SizedBox.shrink(),
+              SizedBox.shrink(),
               SvgPicture.asset(
                 'assets/images/verified_alert_image.svg',
                 height: 168,
                 width: 154,
                 //fit: BoxFit.fill,
               ),
-              Positioned(
-                left:190,
+              Padding(
+                padding: const EdgeInsets.only(left: 6,bottom: 15),
                 child: InkWell(
                   onTap: (){
                     Navigator.pop(context);
@@ -193,7 +196,7 @@ class OtpScreen extends StatelessWidget {
                   child: Container(height: 25,width: 25,decoration: BoxDecoration(
                       color: AppColors.kBlueColor,
                       borderRadius: BorderRadius.circular(20)),
-                    child:const Icon(Icons.close,color: Colors.white,),
+                    child: Icon(Icons.close,color: Colors.white,),
                   ),
                 ),
               ),
@@ -238,12 +241,12 @@ class OtpScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(30)),
         title: Stack(
           children: [
-              Positioned(
+            Positioned(
               left:205,
               child: Container(height: 25,width: 25,decoration: BoxDecoration(
                   color: AppColors.kBlueColor,
                   borderRadius: BorderRadius.circular(20)),
-                child: const Icon(Icons.close,color: Colors.white,),
+                child: Icon(Icons.close,color: Colors.white,),
               ),
             ),
             Column(
@@ -276,7 +279,7 @@ class OtpScreen extends StatelessWidget {
                         fontFamily: "PoppinsLight"),
                   ),
                 ),
-               const SizedBox(height: 10,),
+                SizedBox(height: 10,),
               ],
             ),
           ],

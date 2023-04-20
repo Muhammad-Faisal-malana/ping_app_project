@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ping_project/screens/auth/views/login_view/login%20_screen.dart';
+import 'package:ping_project/screens/auth/views/otp_view/otp_screen.dart';
 import '../../../../constants/app_colors.dart';
 import '../../../../widgets/common_button.dart';
 
@@ -25,25 +26,30 @@ class LoginViaPhoneNumber extends StatelessWidget {
         systemNavigationBarColor: Colors.white,
         // // systemNavigationBarIconBrightness: Brightness.dark,
       ),
-      child: Stack(
-        children: [
-          Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage("assets/images/login_via_phone.png"),
-              ),
-            ),
-          ),
-          Scaffold(
-            backgroundColor: Colors.transparent,
-            body: Column(
+      child: Scaffold(
+
+        body: Stack(
+
+          children: [
+
+             Container(
+               height: double.infinity,
+               width: double.infinity,
+               decoration: const BoxDecoration(
+                 image: DecorationImage(
+                   fit: BoxFit.cover,
+                   image: AssetImage("assets/images/background_img.png"),
+                 ),
+               ),
+             ),
+
+
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                 Padding(
-                  padding: const EdgeInsets.only(top: 66, left: 38),
+                  padding: const EdgeInsets.only(top: 40,left: 38),
                   child: InkWell(
                     onTap: () {
                       Navigator.pop(context);
@@ -53,8 +59,9 @@ class LoginViaPhoneNumber extends StatelessWidget {
                     ),
                   ),
                 ),
+                const  Image(image: AssetImage("assets/images/via_phone.png")),
                 const SizedBox(
-                  height: 190,
+                  height: 30,
                 ),
 
                 Expanded(
@@ -153,7 +160,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                             ),
                             /// TextField for Entering phone number
                             TextFormField(
-
+                              keyboardType: TextInputType.number,
                               cursorHeight: 35,
                               cursorColor: AppColors.kBlackColor,
                               style: const TextStyle(fontSize: 36,fontWeight: FontWeight.bold),
@@ -174,6 +181,7 @@ class LoginViaPhoneNumber extends StatelessWidget {
                                   ],
                                 ),
                                 hintText: '9812345678',
+
                                 hintStyle:  TextStyle(
                                   fontSize: 36,
                                   color: Colors.grey.shade300,
@@ -194,7 +202,11 @@ class LoginViaPhoneNumber extends StatelessWidget {
                                 child: SizedBox(
                                   height: height * 0.07,
                                   width: width * 0.8,
-                                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){},txt: "Continue"),
+                                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                      return OtpScreen();
+                                    },));
+                                  },txt: "Continue"),
                                 ),
                               ),
                             ),
@@ -230,8 +242,8 @@ class LoginViaPhoneNumber extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
