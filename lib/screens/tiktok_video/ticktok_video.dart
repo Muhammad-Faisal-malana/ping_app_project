@@ -140,9 +140,8 @@ class _VideoAppState extends State<VideoApp> {
                                       aspectRatio: 3 / 2,
                                       child: VideoPlayer(controller),
                                     )
-                                  : const Expanded(
-                                      child: Center(
-                                          child: CircularProgressIndicator())),
+                                  : const Center(
+                                      child: CircularProgressIndicator()),
                             ),
                           ),
                         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ping_project/screens/home/bottom_nav_bar.dart';
 
 import 'screens/tiktok_video/ticktok_video.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: VideoApp(),
+      home: MyNavigationBar(),
     );
   }
 }

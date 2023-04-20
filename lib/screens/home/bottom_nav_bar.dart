@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:ping_project/screens/chat_screen/chat_screen.dart';
 
 import '../create_menu/create_menu.dart';
+import '../tiktok_video/ticktok_video.dart';
 import '../videos/video.dart';
 import 'home_screen.dart';
 
@@ -20,7 +21,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     VideoScreen(),
     CreateMenuScreen(),
     ChatScreen(),
-    Text('cart', style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    VideoApp()
   ];
 
   void _onItemTapped(int index) {
