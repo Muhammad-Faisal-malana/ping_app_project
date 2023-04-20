@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ping_project/screens/auth/views/login_view/continue_email_or_phone.dart';
 import 'package:ping_project/screens/auth/views/login_view/login%20_screen.dart';
+import 'package:ping_project/screens/auth/views/login_view/login_via_phone_number.dart';
 import 'package:ping_project/widgets/common_textField.dart';
 
 import '../../../../constants/app_colors.dart';
@@ -29,7 +31,7 @@ class SignUpScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/images/background_22.png"),
+                image: AssetImage("assets/images/background_img.png"),
               ),
             ),
           ),
@@ -52,10 +54,7 @@ class SignUpScreen extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                // Padding(
-                //   padding: EdgeInsets.only(top: height * 0.06),
-                //   child: SvgPicture.asset("assets/images/loin_background.svg"),
-                // ),
+
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
@@ -90,7 +89,7 @@ class SignUpScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.kBlueColor,
                                 fontSize: 35,
-                                // fontFamily: "Poppins-SemiBold",
+
                               ),
                             ),
                             const SizedBox(
@@ -100,7 +99,7 @@ class SignUpScreen extends StatelessWidget {
                               "Sign up to continue",
                               style: TextStyle(
                                 height: 1.5,
-                                //fontWeight: FontWeight.bold,
+
                                 color: AppColors.kGreyColor,
                                 fontSize: 12,
                                 fontFamily: "Poppins-SemiBold",
@@ -110,8 +109,6 @@ class SignUpScreen extends StatelessWidget {
                               height: 30,
                             ),
                             CommonTextField(
-                              //controller: uNameController,
-                              // label: "email",
                               fillColor: const Color(0xffF5F8FA),
                               hint: "Email",
 
@@ -127,11 +124,10 @@ class SignUpScreen extends StatelessWidget {
                               ),
                             ),
                             CommonTextField(
-                              //controller: uNameController,
-                              // label: "email",
+
                               fillColor: const Color(0xffF5F8FA),
                               hint: "Password",
-                              // suffix: SvgPicture.asset("assets/icons/eye.svg"),
+
                               suffix: Container(
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 17, horizontal: 13),
@@ -139,10 +135,6 @@ class SignUpScreen extends StatelessWidget {
                                     "assets/icons/eye.svg",
                                     fit: BoxFit.fill,
                                   )),
-                              // Icon(
-                              //   Icons.remove_red_eye_outlined,
-                              //   color: Constants.kBlueColor,
-                              // ),
                               prefixIcon: Padding(
                                 padding: const EdgeInsets.all(5.0),
                                 child: Container(
@@ -166,8 +158,6 @@ class SignUpScreen extends StatelessWidget {
                               ),
                             ),
                             CommonTextField(
-                              //controller: uNameController,
-                              // label: "email",
                               fillColor: const Color(0xffF5F8FA),
                               hint: "Username",
 
@@ -228,7 +218,14 @@ class SignUpScreen extends StatelessWidget {
                                   width: width * 0.8,
                                   child: CommonButton(
                                       txt: "Sign up",
-                                      onPress: () {},
+                                      onPress: () {
+
+                                        Navigator.push(context, MaterialPageRoute(
+                                          builder: (context) {
+                                            return const ContinueWithEmailOrPhone();
+                                          },
+                                        ));
+                                      },
                                       color: AppColors.kBlueColor),
                                 ),
                               ),
@@ -239,15 +236,22 @@ class SignUpScreen extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  "Already have an account ?",
-                                  style: TextStyle(
-                                    color: AppColors.kBlueColor,
-                                    fontSize: 12,
-                                    fontFamily: "Poppins-SemiBold",
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                      return const LoginViaPhoneNumber();
+                                    },));
+                                  },
+                                  child: Text(
+                                    "Already have an account ?",
+                                    style: TextStyle(
+                                      color: AppColors.kBlueColor,
+                                      fontSize: 12,
+                                      fontFamily: "Poppins-SemiBold",
+                                    ),
                                   ),
                                 ),
-                                GestureDetector(
+                                InkWell(
                                   onTap: () => Navigator.push(
                                       context,
                                       MaterialPageRoute(

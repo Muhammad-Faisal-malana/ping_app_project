@@ -14,43 +14,43 @@ class CreateMenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<GridItemsModel> gridItemList = [
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/plus_regular.svg',
         title: 'Create Post',
       ),
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/film-Regular.svg',
         title: 'Create Short',
       ),
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/video-Regular.svg',
         title: 'Upload Videos',
       ),
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
-        title: 'Upload Videos',
-      ),
-      GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/heart-Regular.svg',
         title: 'Add Stories',
       ),
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/camera-Regular.svg',
         title: 'Camera',
       ),
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/users-three-Regular.svg',
         title: 'Create Meeting',
       ),
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/microphone-Regular.svg',
+        title: 'Create Podcast',
+      ),
+      GridItemsModel(
+        image: 'assets/icons/dating_regular.svg',
         title: 'Dating',
       ),
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/store-Regular.svg',
         title: 'Sell Something',
       ),
       GridItemsModel(
-        image: 'assets/icons/chat.svg',
+        image: 'assets/icons/eye-Regular.svg',
         title: 'Go Live',
       ),
     ];
@@ -84,7 +84,8 @@ class CreateMenuScreen extends StatelessWidget {
             Expanded(
               child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      mainAxisExtent: 45,
+                      mainAxisExtent: 60,
+
                       crossAxisCount: 2,
                       mainAxisSpacing: 15,
                       crossAxisSpacing: 15),

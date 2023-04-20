@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ping_project/screens/auth/views/sign_up_view/sign_up_screen.dart';
+import 'package:ping_project/screens/home/home_screen.dart';
 import 'package:ping_project/widgets/common_textField.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../widgets/common_button.dart';
+import '../../../home/bottom_nav_bar.dart';
 import '../forgot_password/forgot_password.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -23,6 +25,7 @@ class LoginScreen extends StatelessWidget {
         // // systemNavigationBarIconBrightness: Brightness.dark,
       ),
       child: Stack(
+        alignment: Alignment.topCenter,
         children: [
           Container(
             height: double.infinity,
@@ -30,10 +33,14 @@ class LoginScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/images/login_background.png"),
+                image: AssetImage("assets/images/background_img.png"),
               ),
             ),
           ),
+        Padding(
+          padding:  EdgeInsets.only(top: height*0.09),
+          child: SvgPicture.asset("assets/images/login_top_bg.svg"),
+        ),
           Scaffold(
             backgroundColor: Colors.transparent,
             body: Column(
@@ -51,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 190,
+                  height: 215,
                 ),
                 // Padding(
                 //   padding: EdgeInsets.only(top: height * 0.06),
@@ -63,12 +70,12 @@ class LoginScreen extends StatelessWidget {
                       boxShadow: const [
                         BoxShadow(
                           //  color: Colors.black.withOpacity(0.5),
-                            blurRadius: 5.0, // soften the shadow
-                            spreadRadius: 1.0, //extend the shadow
-                            offset: Offset(
-                              0.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
-                            ),
+                          blurRadius: 5.0, // soften the shadow
+                          spreadRadius: 1.0, //extend the shadow
+                          offset: Offset(
+                            0.0, // Move to right 5  horizontally
+                            5.0, // Move to bottom 5 Vertically
+                          ),
                         ),
                       ],
                       color: AppColors.kWhiteColor,
@@ -107,16 +114,19 @@ class LoginScreen extends StatelessWidget {
                               height: 39,
                             ),
                             CommonTextField(
-                              //controller: uNameController,
-                              // label: "email",
+
                               fillColor: const Color(0xffF5F8FA),
                               hint: "moguzbulbul@gmail.com",
 
                               prefixIcon: Padding(
                                 padding: const EdgeInsets.all(5.0),
                                 child: Container(
-                                    padding: const EdgeInsets.symmetric(vertical: 17,horizontal: 13),
-                                    child: SvgPicture.asset("assets/icons/user.svg",fit: BoxFit.fill,)),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 17, horizontal: 13),
+                                    child: SvgPicture.asset(
+                                      "assets/icons/user.svg",
+                                      fit: BoxFit.fill,
+                                    )),
                               ),
                             ),
                             CommonTextField(
@@ -125,18 +135,23 @@ class LoginScreen extends StatelessWidget {
                               fillColor: const Color(0xffF5F8FA),
                               hint: "Password",
                               // suffix: SvgPicture.asset("assets/icons/eye.svg"),
-                              suffix:  Container(
-                                padding: const EdgeInsets.symmetric(vertical: 17,horizontal: 13),
-                                  child: SvgPicture.asset("assets/icons/eye.svg",fit: BoxFit.fill,)),
-                              // Icon(
-                              //   Icons.remove_red_eye_outlined,
-                              //   color: Constants.kBlueColor,
-                              // ),
+                              suffix: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 17, horizontal: 13),
+                                  child: SvgPicture.asset(
+                                    "assets/icons/eye.svg",
+                                    fit: BoxFit.fill,
+                                  )),
+
                               prefixIcon: Padding(
                                 padding: const EdgeInsets.all(5.0),
                                 child: Container(
-                                    padding: const EdgeInsets.symmetric(vertical: 17,horizontal: 13),
-                                    child: SvgPicture.asset("assets/icons/locked.svg",fit: BoxFit.fill,)),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 17, horizontal: 13),
+                                    child: SvgPicture.asset(
+                                      "assets/icons/locked.svg",
+                                      fit: BoxFit.fill,
+                                    )),
                               ),
                             ),
                             Center(
@@ -145,7 +160,17 @@ class LoginScreen extends StatelessWidget {
                                 child: SizedBox(
                                   height: height * 0.07,
                                   width: width * 0.8,
-                                  child: CommonButton(color: AppColors.kBlueColor,onPress: (){},txt: "Log In"),
+                                  child: CommonButton(
+                                      color: AppColors.kBlueColor,
+                                      onPress: () {
+                                        Navigator.push(context,
+                                            MaterialPageRoute(
+                                          builder: (context) {
+                                            return const MyNavigationBar();
+                                          },
+                                        ));
+                                      },
+                                      txt: "Log In"),
                                 ),
                               ),
                             ),
@@ -157,24 +182,39 @@ class LoginScreen extends StatelessWidget {
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                      return const ForgotPasswordScreen();
-                                    },));
+                                    Navigator.push(context, MaterialPageRoute(
+                                      builder: (context) {
+                                        return const ForgotPasswordScreen();
+                                      },
+                                    ));
                                   },
-                                  child: Text(
-                                    "ForgotPassword.   ",
-                                    style: TextStyle(
-                                      color: AppColors.kGreyColor,
-                                      fontSize: 12,
-                                      fontFamily: "Poppins-SemiBold",
+                                  child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) {
+                                              return const ForgotPasswordScreen();
+                                            },
+                                          ));
+                                    },
+                                    child: Text(
+                                      "ForgotPassword.    ",
+                                      style: TextStyle(
+                                        color: AppColors.kGreyColor,
+                                        fontSize: 12,
+                                        fontFamily: "Poppins-SemiBold",
+                                      ),
                                     ),
                                   ),
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder:(context) {
-                                      return  const SignUpScreen();
-                                    },));
+                                    Navigator.push(context, MaterialPageRoute(
+                                      builder: (context) {
+                                        return const SignUpScreen();
+                                      },
+                                    ));
                                   },
                                   child: Text(
                                     "Create new account",

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ping_project/screens/chat_screen/chat_screen.dart';
+import 'package:ping_project/screens/market_place.dart';
 
 import '../create_menu/create_menu.dart';
 import '../tiktok_video/ticktok_video.dart';
@@ -21,7 +22,9 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     VideoScreen(),
     CreateMenuScreen(),
     ChatScreen(),
-    VideoApp()
+
+    MarketPlace(),
+
   ];
 
   void _onItemTapped(int index) {

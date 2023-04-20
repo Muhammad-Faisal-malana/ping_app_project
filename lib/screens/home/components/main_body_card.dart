@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../tiktok_video/ticktok_video.dart';
+
 class MainBodyCard extends StatelessWidget {
   final bool? isVideo;
   const MainBodyCard({super.key, this.isVideo = false});
@@ -28,14 +30,21 @@ class MainBodyCard extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Container(
-            width: 375.54,
-            height: 240.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14.0),
-              image: const DecorationImage(
-                image: AssetImage('assets/icons/body_pic.png'),
-                fit: BoxFit.cover,
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const VideoApp();
+              },));
+            },
+            child: Container(
+              width: 375.54,
+              height: 240.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14.0),
+                image: const DecorationImage(
+                  image: AssetImage('assets/icons/body_pic.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
