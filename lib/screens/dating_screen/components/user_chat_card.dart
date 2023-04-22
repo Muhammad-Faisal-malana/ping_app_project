@@ -22,34 +22,17 @@ class NoteChatCard extends StatelessWidget {
             topRight: Radius.circular(20.0),
             bottomRight: Radius.circular(20.0),
           ),
-          color: containerColor ?? const Color(0xFFD9D9D9)),
+          color: containerColor ??  Colors.grey.shade300),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Row(
-            children: [
-              Container(
-                  height: 45,
-                  width: 45,
-                  decoration: const BoxDecoration(),
-                  child: Image.asset('assets/images/person_avatar.png')),
-              const SizedBox(
-                width: 10,
-              ),
-              Text('Ali Khan',
-                  style: TextStyle(
-                    color: textColor ?? Colors.black,
-                    fontSize: 18,
-                      fontWeight: FontWeight.w500
-                  )),
-            ],
-          ),
+
           Text(
             "Lorem ipsum dolor sit amet consectetur adipiscing elit.lor sit amet consectetLorem ipsum dolor sit amet consectetur adipiscing ",
             style: TextStyle(
               color: textColor ?? Colors.black,
               fontSize: 14,
-            
+
             ),
           ),
           Text(

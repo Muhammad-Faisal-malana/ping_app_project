@@ -4,7 +4,6 @@ import 'package:ping_project/screens/chat_screen/chat_screen.dart';
 import 'package:ping_project/screens/market_place.dart';
 
 import '../create_menu/create_menu.dart';
-import '../tiktok_video/ticktok_video.dart';
 import '../videos/video.dart';
 import 'home_screen.dart';
 
@@ -22,9 +21,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     VideoScreen(),
     CreateMenuScreen(),
     ChatScreen(),
-
     MarketPlace(),
-
   ];
 
   void _onItemTapped(int index) {

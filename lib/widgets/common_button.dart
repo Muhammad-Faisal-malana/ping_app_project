@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
 class CommonButton extends StatelessWidget {
-  const CommonButton({Key? key, required this.txt, required this.onPress, required this.color}) : super(key: key);
+  const CommonButton({Key? key, required this.txt, required this.onPress, required this.color, this.height}) : super(key: key);
   final String? txt;
   final dynamic onPress;
   final Color color;
+  final double? height;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: height??60,
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

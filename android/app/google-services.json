@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "630180201165",
+    "firebase_url": "https://ping-43334-default-rtdb.firebaseio.com",
+    "project_id": "ping-43334",
+    "storage_bucket": "ping-43334.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630180201165:android:115109f817a326c3e59f84",
+        "android_client_info": {
+          "package_name": "com.ping.pingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630180201165-ls7k40cp36h0lv8samvnj0s7v86nle61.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ping.pingapp",
+            "certificate_hash": "cbe60fd2413f2d50ba379f725681291fc43baaa6"
+          }
+        },
+        {
+          "client_id": "630180201165-9bvm69jl11pght32p4drd4v7lmejn6qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD79KDkrZzyVK653I0jJqR59yW7ccStzLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630180201165-9bvm69jl11pght32p4drd4v7lmejn6qo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630180201165:android:99b2b65bf5e6f836e59f84",
+        "android_client_info": {
+          "package_name": "com.pingmedia.me.ping_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630180201165-cridu0gdiagb88s8vo1nqdqrcenfb84g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pingmedia.me.ping_project",
+            "certificate_hash": "1d0e4bdb90b392ba0c53db75c61ed2f997a1f53f"
+          }
+        },
+        {
+          "client_id": "630180201165-9bvm69jl11pght32p4drd4v7lmejn6qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD79KDkrZzyVK653I0jJqR59yW7ccStzLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630180201165-9bvm69jl11pght32p4drd4v7lmejn6qo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

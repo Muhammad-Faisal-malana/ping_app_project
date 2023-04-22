@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ping_project/constants/app_colors.dart';
 
+import '../../widgets/common_button.dart';
+import 'components/dating_dialog.dart';
 import 'components/matches_top-card.dart';
 
 class Matches extends StatelessWidget {
@@ -9,6 +11,7 @@ class Matches extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
@@ -67,23 +70,35 @@ class Matches extends StatelessWidget {
                 child: Column(
                   // mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(30)),
                         child: Image.asset(
                           "assets/images/bgImg.png",
-
                         ),
-
-
                       ),
                     ),
-
-                    Row(children: [
-                      SvgPicture.asset(""),
-                    ],)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SvgPicture.asset("assets/icons/cross_btn.svg"),
+                        GestureDetector(
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return const DatingDialog();
+                                },
+                              );
+                            },
+                            child:
+                                SvgPicture.asset("assets/icons/tick_btn.svg")),
+                        SizedBox(),
+                        SizedBox(),
+                      ],
+                    )
                   ],
                 ),
               ),

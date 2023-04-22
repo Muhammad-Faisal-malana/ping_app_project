@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="66" height="66" viewBox="0 0 66 66">
+  <defs>
+    <filter id="Ellipse_188" x="0" y="0" width="66" height="66" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1043" data-name="Group 1043" transform="translate(-60 -568)">
+    <g transform="matrix(1, 0, 0, 1, 60, 568)" filter="url(#Ellipse_188)">
+      <circle id="Ellipse_188-2" data-name="Ellipse 188" cx="24" cy="24" r="24" transform="translate(9 9)" fill="#fff"/>
+    </g>
+    <path id="Icon_metro-cross" data-name="Icon metro-cross" d="M20.256,16.267h0l-5.415-5.415,5.415-5.415h0a.559.559,0,0,0,0-.789L17.7,2.091a.559.559,0,0,0-.789,0h0L11.5,7.506,6.08,2.091h0a.559.559,0,0,0-.789,0L2.734,4.649a.559.559,0,0,0,0,.789h0l5.415,5.415L2.734,16.267h0a.559.559,0,0,0,0,.789l2.558,2.558a.559.559,0,0,0,.789,0h0L11.5,14.2l5.415,5.415h0a.559.559,0,0,0,.789,0l2.558-2.558a.559.559,0,0,0,0-.789Z" transform="translate(81.429 590.072)" fill="#3776a5"/>
+  </g>
+</svg>
